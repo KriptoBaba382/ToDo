@@ -28,14 +28,20 @@ const render = function () {
         li.querySelector('.todo-complete').addEventListener('click', function () {
             item.completed = !item.completed
             render()
-
+        })
+        li.querySelector('.todo-remove').addEventListener('click', function () {
+            const indexDeleted = toDoData.indexOf(item);
+            toDoData.splice(indexDeleted, 1)
+            render()
         })
     })
 }
 
 todoControl.addEventListener('submit', function (event) {
     event.preventDefault()
-
+    if (headerInput.value == '') {
+        retern
+    }
     const newToDo = {
         text: headerInput.value,
         completed: false
